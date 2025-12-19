@@ -1,0 +1,393 @@
+/* Updated: 2025-11-30T13:46:23.930Z */
+/* Updated: 2025-11-29T21:29:31.069Z */
+/* Updated: 2025-11-29T21:11:38.217Z */
+/* Updated: 2025-11-29T21:08:50.546Z */
+/* Updated: 2025-11-29T20:43:12.102Z */
+/* Updated: 2025-11-29T20:35:33.187Z */
+/* Updated: 2025-11-29T19:34:39.245Z */
+/* Updated: 2025-11-29T19:32:22.883Z */
+/* Updated: 2025-11-29T18:40:44.685Z */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Lake Velence Color Palette - Senior Friendly with High Contrast */
+  --color-lake-blue-deep: #1A4D6B;
+  --color-lake-blue: #2C7BA0;
+  --color-lake-blue-light: #4A9BC7;
+  --color-lake-green: #3D8B7C;
+  --color-lake-green-light: #5FA99A;
+  --color-lake-teal: #2D7C6E;
+  --color-sand: #E8D4B8;
+  --color-sand-dark: #D4C4A8;
+
+  --color-background: #ffffff;
+  --color-foreground: #1A1A1A;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1A1A1A;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1A1A1A;
+
+  /* Primary: Lake Blue */
+  --color-primary: #2C7BA0;
+  --color-primary-foreground: #ffffff;
+  --color-primary-hover: #1A4D6B;
+  
+  /* Secondary: Lake Green */
+  --color-secondary: #3D8B7C;
+  --color-secondary-foreground: #ffffff;
+  --color-secondary-hover: #2D7C6E;
+
+  /* Muted backgrounds */
+  --color-muted: #F5F8FA;
+  --color-muted-foreground: #2C3E50;
+
+  /* Accent: Sand tones */
+  --color-accent: #E8D4B8;
+  --color-accent-foreground: #1A1A1A;
+
+  /* Semantic colors - High contrast */
+  --color-destructive: #DC2626;
+  --color-destructive-foreground: #ffffff;
+  
+  --color-success: #2D8659;
+  --color-success-foreground: #ffffff;
+  
+  --color-warning: #F59E0B;
+  --color-warning-foreground: #1A1A1A;
+  
+  --color-info: #2C7BA0;
+  --color-info-foreground: #ffffff;
+
+  /* Borders and inputs - High contrast */
+  --color-border: #CBD5E0;
+  --color-border-strong: #94A3B8;
+  --color-input: #E2E8F0;
+  --color-input-focus: #2C7BA0;
+  --color-ring: #2C7BA0;
+
+  /* Text colors - High contrast for accessibility */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #2C3E50;
+  --color-text-tertiary: #64748B;
+  --color-text-white: #FFFFFF;
+  --color-text-link: #2C7BA0;
+  --color-text-link-hover: #1A4D6B;
+
+  /* Button colors */
+  --color-button-primary: #2C7BA0;
+  --color-button-primary-foreground: #FFFFFF;
+  --color-button-primary-hover: #1A4D6B;
+  --color-button-secondary: #3D8B7C;
+  --color-button-secondary-foreground: #FFFFFF;
+  --color-button-secondary-hover: #2D7C6E;
+
+  /* Background variations */
+  --color-background-light: #F8FAFC;
+  --color-background-muted: #F1F5F9;
+  --color-background-accent: #E8F4F8;
+
+  /* Charts */
+  --color-chart-1: #2C7BA0;
+  --color-chart-2: #3D8B7C;
+  --color-chart-3: #E8D4B8;
+  --color-chart-4: #F59E0B;
+  --color-chart-5: #DC2626;
+
+  /* Sidebar */
+  --color-sidebar: #f7f7f7;
+  --color-sidebar-foreground: #404040;
+  --color-sidebar-primary: #1a1a1a;
+  --color-sidebar-primary-foreground: #fafafa;
+  --color-sidebar-accent: #f0f0f0;
+  --color-sidebar-accent-foreground: #1a1a1a;
+  --color-sidebar-border: #d4d4d8;
+  --color-sidebar-ring: #3b82f6;
+
+  /* Border radius - Slightly larger for senior-friendly design */
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.375rem;
+
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  /* Typography - Senior-friendly larger sizes */
+  --font-sans: "Inter", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  
+  --font-size-base: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 30px;
+  --font-size-3xl: 36px;
+  --font-size-4xl: 48px;
+  
+  --line-height-tight: 1.4;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  Border color compatibility styles
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #1A1A1A;
+    --card: #ffffff;
+    --card-foreground: #1A1A1A;
+    --popover: #ffffff;
+    --popover-foreground: #1A1A1A;
+    --primary: #2C7BA0;
+    --primary-foreground: #ffffff;
+    --secondary: #3D8B7C;
+    --secondary-foreground: #ffffff;
+    --muted: #F5F8FA;
+    --muted-foreground: #2C3E50;
+    --accent: #E8D4B8;
+    --accent-foreground: #1A1A1A;
+    --destructive: #DC2626;
+    --destructive-foreground: #ffffff;
+    --border: #CBD5E0;
+    --input: #E2E8F0;
+    --ring: #2C7BA0;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: #0F1419;
+    --foreground: #F8FAFC;
+    --card: #1A2332;
+    --card-foreground: #F8FAFC;
+    --popover: #1A2332;
+    --popover-foreground: #F8FAFC;
+    --primary: #4A9BC7;
+    --primary-foreground: #0F1419;
+    --secondary: #5FA99A;
+    --secondary-foreground: #0F1419;
+    --muted: #1E2A3A;
+    --muted-foreground: #94A3B8;
+    --accent: #2C3E50;
+    --accent-foreground: #F8FAFC;
+    --destructive: #EF4444;
+    --destructive-foreground: #F8FAFC;
+    --border: #334155;
+    --input: #1E2A3A;
+    --ring: #4A9BC7;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* Skip link - visible when focused for keyboard users */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 9999;
+  }
+
+  .skip-link:focus,
+  .skip-link:active {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-decoration: none;
+  }
+
+  /* Senior-Friendly Typography */
+  h1 {
+    font-family: var(--font-sans);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+    margin-bottom: 0.875rem;
+  }
+
+  h3 {
+    font-family: var(--font-sans);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  h4 {
+    font-family: var(--font-sans);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+    margin-bottom: 0.625rem;
+  }
+
+  h5 {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  h6 {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--color-text-link);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: 500;
+  }
+
+  a:hover {
+    color: var(--color-text-link-hover);
+    text-decoration-thickness: 3px;
+  }
+
+  a:focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* Focus styles for accessibility */
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 3px;
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@layer utilities {
+  /* Senior-friendly utility classes */
+  .text-senior-base {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .text-senior-lg {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+
+  .text-senior-xl {
+    font-size: 24px;
+    line-height: 1.6;
+  }
+
+  /* High contrast utilities */
+  .high-contrast {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  /* Touchable area minimum 44x44px */
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}

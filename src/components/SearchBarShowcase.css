@@ -1,0 +1,410 @@
+.showcase-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: inherit;
+}
+
+.showcase-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.showcase-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 10px 0;
+}
+
+.showcase-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.showcase-section {
+  margin-bottom: 50px;
+  padding: 30px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.showcase-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.showcase-description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.showcase-search-wrapper {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Tips Section */
+.showcase-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tip {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.tip h4 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.tip code {
+  display: block;
+  background: #f3f4f6;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #374151;
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+}
+
+/* Shortcuts Section */
+.showcase-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.shortcut {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.shortcut kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  height: 40px;
+  padding: 0 10px;
+  background: #1f2937;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: monospace;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shortcut span {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Algorithm Section */
+.showcase-algo h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 20px 0 15px 0;
+}
+
+.showcase-algo > p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.algo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.algo-list li {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+}
+
+.algo-list strong {
+  display: block;
+  color: #1f2937;
+  margin-bottom: 5px;
+}
+
+.algo-list code {
+  display: block;
+  background: #f3f4f6;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #374151;
+  font-family: 'Courier New', monospace;
+  margin-top: 5px;
+}
+
+/* Features Section */
+.showcase-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.feature {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.feature h4 {
+  margin: 0 0 10px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.feature p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Code Section */
+.showcase-code,
+.showcase-data {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.showcase-code h2,
+.showcase-data h2 {
+  color: #e5e7eb;
+  border-bottom-color: #374151;
+}
+
+.showcase-code .showcase-description,
+.showcase-data .showcase-description {
+  color: #d1d5db;
+}
+
+.showcase-pre {
+  background: #0f172a;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.showcase-pre code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+/* Documentation List */
+.doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.doc-list li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #374151;
+}
+
+.doc-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .showcase-container {
+    background: #0f172a;
+  }
+
+  .showcase-header h1 {
+    color: #f3f4f6;
+  }
+
+  .showcase-subtitle {
+    color: #9ca3af;
+  }
+
+  .showcase-section {
+    background: #1f2937;
+    border-color: #374151;
+  }
+
+  .showcase-section h2 {
+    color: #f3f4f6;
+    border-bottom-color: #374151;
+  }
+
+  .showcase-description {
+    color: #9ca3af;
+  }
+
+  .showcase-search-wrapper {
+    background: #111827;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .tip {
+    background: #111827;
+  }
+
+  .tip h4 {
+    color: #f3f4f6;
+  }
+
+  .tip code {
+    background: #0f172a;
+    color: #e5e7eb;
+  }
+
+  .shortcut {
+    background: #111827;
+    border-color: #374151;
+  }
+
+  .shortcut span {
+    color: #d1d5db;
+  }
+
+  .showcase-algo h3 {
+    color: #f3f4f6;
+  }
+
+  .showcase-algo > p {
+    color: #9ca3af;
+  }
+
+  .algo-list li {
+    background: #111827;
+    border-left-color: #34d399;
+  }
+
+  .algo-list strong {
+    color: #f3f4f6;
+  }
+
+  .algo-list code {
+    background: #0f172a;
+    color: #e5e7eb;
+  }
+
+  .feature {
+    background: #111827;
+    border-color: #374151;
+  }
+
+  .feature h4 {
+    color: #f3f4f6;
+  }
+
+  .feature p {
+    color: #9ca3af;
+  }
+
+  .doc-list li {
+    color: #d1d5db;
+  }
+
+  .doc-list li:before {
+    color: #34d399;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .showcase-container {
+    padding: 20px 15px;
+  }
+
+  .showcase-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .showcase-section {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .showcase-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .showcase-tips,
+  .showcase-features,
+  .showcase-shortcuts {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-search-wrapper {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .showcase-section {
+    padding: 15px;
+  }
+
+  .showcase-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .showcase-pre code {
+    font-size: 0.75rem;
+  }
+
+  .shortcut {
+    flex-direction: column;
+    text-align: center;
+  }
+}
