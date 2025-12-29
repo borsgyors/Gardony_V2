@@ -123,7 +123,7 @@ export default function HomePage() {
       <section className="relative pt-16 sm:pt-20 h-[60vh] min-h-[500px] sm:h-[70vh] sm:min-h-[600px] z-0 hero-bg">
 
         <div className="relative container h-full flex flex-col justify-center items-center text-center text-white px-4">
-          <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 max-w-5xl xl:absolute xl:top-[220px] xl:left-[156px] xl:w-[1020px] xl:h-[197px] xl:text-left xl:items-start">
+          <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 max-w-5xl xl:absolute xl:top-[160px] xl:left-[156px] xl:w-[1020px] xl:h-[197px] xl:text-left xl:items-start">
 
             <h1 className="font-bold mb-6 drop-shadow-2xl text-[#FFFFFF]">
               A Velencei-tó fővárosa
