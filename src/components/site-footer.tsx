@@ -1,133 +1,136 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Phone, Mail, Clock, FileText, Calendar, Waves, Building, Users, Home } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
+import { Facebook, MapPin, Phone, Mail } from "lucide-react"
 
 export function SiteFooter() {
-  const { t } = useLanguage()
+  const footerLinks = [
+    { label: "Adatvédelem", href: "/adatvedelem" },
+    { label: "Süti tájékoztató", href: "/cookie-tajekoztato" },
+    { label: "Impresszum", href: "/impresszum" },
+    { label: "Panaszkezelés", href: "/panaszkezeles" },
+    { label: "Súgó", href: "/sugo" },
+    { label: "Akadálymentesítés", href: "/akadalymentesites" }
+  ]
 
   return (
-    <footer className="bg-gradient-to-br from-[#1A4D6B] to-[#2D7C6E] text-white">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* About Section */}
-          <div>
-            <h3 className="text-3xl text-white/95 font-bold mb-6">{t('footer.about')}</h3>
-            <p className="text-xl text-white/90 leading-relaxed mb-6">
-              {t('footer.about.text')}
-            </p>
-          </div>
+    <footer className="mt-0 overflow-x-hidden">
+      {/* Highlight section */}
+      <section className="relative h-[240px] sm:h-[260px] w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
+        <Image
+          src="/media/footervelenceito.png"
+          alt="Velencei-tó légi fotó"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-black/45" />
 
-          {/* Navigation Links */}
-          <div>
-            <h3 className="text-3xl text-white/95 font-bold mb-6">{t('nav.home')}</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link href="/bemutatkozas" className="flex items-center gap-3 text-xl text-white/90 hover:text-white transition-colors no-underline">
-                  <Users className="w-6 h-6" />
-                  {t('nav.about')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/hirek" className="flex items-center gap-3 text-xl text-white/90 hover:text-white transition-colors no-underline">
-                  <Calendar className="w-6 h-6" />
-                  {t('nav.news')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/dokumentumok" className="flex items-center gap-3 text-xl text-white/90 hover:text-white transition-colors no-underline">
-                  <FileText className="w-6 h-6" />
-                  {t('nav.documents')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/turizmus" className="flex items-center gap-3 text-xl text-white/90 hover:text-white transition-colors no-underline">
-                  <Waves className="w-6 h-6" />
-                  {t('nav.tourism')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/szolgaltatasok" className="flex items-center gap-3 text-xl text-white/90 hover:text-white transition-colors no-underline">
-                  <Building className="w-6 h-6" />
-                  {t('nav.services')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/kapcsolat" className="flex items-center gap-3 text-xl text-white/90 hover:text-white transition-colors no-underline">
-                  <Home className="w-6 h-6" />
-                  {t('nav.contact')}
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="relative h-full flex items-center">
+          <div className="container max-w-6xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 sm:px-6">
+            <div className="text-left text-white space-y-2">
+              <h2 className="text-3xl sm:text-[34px] font-semibold font-[Inter] leading-tight text-white">Gárdony most</h2>
+              <p className="text-sm sm:text-base text-white/90 max-w-2xl font-[Inter] leading-relaxed">
+                Friss tartalmak a város hivatalos Facebook-oldaláról.
+              </p>
+            </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-3xl text-white/95 font-bold mb-6">{t('contact.title')}</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-xl text-white/90">
-                <MapPin className="w-6 h-6 mt-1 flex-shrink-0" />
-                <span>2483 Gárdony<br />Szabadság út 20-22</span>
-              </li>
-              <li className="flex items-center gap-3 text-xl text-white/90">
-                <Phone className="w-6 h-6 flex-shrink-0" />
-                <span>+36 22 355 370</span>
-              </li>
-              <li className="flex items-center gap-3 text-xl text-white/90">
-                <Mail className="w-6 h-6 flex-shrink-0" />
-                <span>onkormanyzat@gardony.hu</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Office Hours */}
-          <div>
-            <h3 className="text-3xl text-white/95 font-bold mb-6">{t('footer.office.hours')}</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-6 text-xl text-white/90">
-                <Clock className="w-6 h-6 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium text-white/90">{t('footer.office.monday')}</p>
-                  <p className="font-medium text-white/90">{t('footer.office.wednesday')}</p>
-                  <p className="font-medium text-white/90">{t('footer.office.friday')}</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-white/20">
-        <div className="container py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-xl text-white/80">
-              {t('footer.copyright')}
-            </p>
-            <div className="flex flex-wrap gap-6">
-              <Link href="/adatvedelem" className="text-xl text-white/80 hover:text-white transition-colors no-underline">
-                {t('footer.privacy')}
-              </Link>
-              <Link href="/cookie-tajekoztato" className="text-xl text-white/80 hover:text-white transition-colors no-underline">
-                Cookie tájékoztató
-              </Link>
-              <Link href="/impresszum" className="text-xl text-white/80 hover:text-white transition-colors no-underline">
-                {t('footer.imprint')}
-              </Link>
-              <Link href="/panaszkezeles" className="text-xl text-white/80 hover:text-white transition-colors no-underline">
-                Panaszkezelés
-              </Link>
-              <Link href="/suga" className="text-xl text-white/80 hover:text-white transition-colors no-underline">
-                {t('footer.help')}
-              </Link>
-              <Link href="/akadalymentesites" className="text-xl text-white/80 hover:text-white transition-colors no-underline">
-                {t('footer.accessibility')}
-              </Link>
+            <div className="flex-shrink-0 self-start sm:self-center">
+              <a
+                href="https://www.facebook.com/gardonyonkormanyzat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white text-[#007A6C] shadow-md transition-transform duration-200 hover:scale-[1.03] focus-visible:scale-[1.03] no-underline"
+              >
+                <Facebook className="w-6 h-6" />
+                <span className="text-sm sm:text-base font-semibold font-[Inter]">Kövess minket Facebookon</span>
+              </a>
             </div>
           </div>
         </div>
-      </div>
+
+        {/* Curved divider */}
+        <svg className="absolute -bottom-[1px] left-0 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,50 C320,110 1120,-10 1440,50 L1440,120 L0,120 Z" fill="#DFEDEA" />
+        </svg>
+      </section>
+
+      {/* Main footer content */}
+      <section className="relative bg-[#DFEDEA] pt-12 pb-8 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <div className="container max-w-6xl px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* City info */}
+            <div className="space-y-3">
+              <h3 className="text-base sm:text-lg font-semibold font-[Inter] text-[#0B3A2F]">Címer + logó</h3>
+              <div className="flex items-center gap-3">
+                <img src="/media/logo_whitebg.png" alt="Gárdony logó" className="w-12 h-12 object-contain" />
+                <div>
+                  <p className="text-sm sm:text-base font-semibold text-[#0B3A2F] font-[Inter]">Gárdony</p>
+                  <p className="text-xs sm:text-sm text-[#32423C] font-[Inter] leading-5">Gárdony hivatalos önkormányzati honlapja – információk, ügyintézés, hírek és programok egy helyen.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation */}
+            <div className="space-y-3">
+              <h3 className="text-base sm:text-lg font-semibold font-[Inter] text-[#0B3A2F]">Főoldal</h3>
+              <nav className="flex flex-col gap-2 text-sm text-[#32423C] font-[Inter]">
+                <Link href="/ugyintezes" className="no-underline hover:text-[#007A6C]">Ügyintézés</Link>
+                <Link href="/hirek" className="no-underline hover:text-[#007A6C]">Hírek</Link>
+                <Link href="/bemutatkozas" className="no-underline hover:text-[#007A6C]">Programok</Link>
+                <Link href="/bemutatkozas" className="no-underline hover:text-[#007A6C]">Városunk</Link>
+                <Link href="/onkormanyzat" className="no-underline hover:text-[#007A6C]">Önkormányzat</Link>
+                <Link href="/turizmus" className="no-underline hover:text-[#007A6C]">Turizmus</Link>
+              </nav>
+            </div>
+
+            {/* Contact */}
+            <div className="space-y-3">
+              <h3 className="text-base sm:text-lg font-semibold font-[Inter] text-[#0B3A2F]">Kapcsolat</h3>
+              <address className="not-italic flex flex-col gap-3 text-sm text-[#32423C] font-[Inter]">
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-[#007A6C] mt-0.5" />
+                  <span>2483 Gárdony, Szabadság út 20-22</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Phone className="w-4 h-4 text-[#007A6C] mt-0.5" />
+                  <a href="tel:+3622355370" className="no-underline hover:text-[#007A6C]">+36 22 355 370</a>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Mail className="w-4 h-4 text-[#007A6C] mt-0.5" />
+                  <a href="mailto:onkormanyzat@gardony.hu" className="no-underline hover:text-[#007A6C]">onkormanyzat@gardony.hu</a>
+                </div>
+              </address>
+            </div>
+
+            {/* Office hours */}
+            <div className="space-y-3">
+              <h3 className="text-base sm:text-lg font-semibold font-[Inter] text-[#0B3A2F]">Ügyfélfogadás</h3>
+              <ul className="space-y-2 text-sm text-[#32423C] font-[Inter]">
+                <li>Hétfő: 8:00-12:00, 13:00-17:30</li>
+                <li>Szerda: 8:00-12:00</li>
+                <li>Péntek: 8:00-12:00</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legal bar */}
+      <section className="relative bg-[#007A6C] text-white w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <div className="container max-w-6xl px-4 sm:px-6 h-12 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
+          <p className="text-xs sm:text-sm font-[Inter]">© 2025 Gárdony Város Önkormányzata. Minden jog fenntartva.</p>
+          <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm font-[Inter]">
+            {footerLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="no-underline hover:text-[#A7F3D0]">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </footer>
   )
 }

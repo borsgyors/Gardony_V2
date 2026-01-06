@@ -233,7 +233,7 @@ export function SiteHeader() {
 
             {/* Facebook */}
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/gardonyvaros"
               target="_blank"
               rel="noopener noreferrer"
               className="no-underline"

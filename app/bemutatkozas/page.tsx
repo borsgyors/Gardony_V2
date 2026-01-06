@@ -8,6 +8,16 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function BemutatkozasPage() {
+  const mayorMessage = [
+    "Kedves Látogató!",
+    "Sok szeretettel köszöntöm Önt Gárdony Város Önkormányzatának honlapján!",
+    "Négy településrészen – Agárdon, Csiribpusztán, Dinnyésen és Gárdonyban - több mint tizenháromezren élünk állandó lakosként, de ez a szám a valóságban jóval nagyobb, hiszen nagyon sok nyaralótulajdonos tölti nálunk a szabadidejét, nagy számban érkeznek turisták, sportolók, kerékpárosok, kirándulók, horgászok, akik a Velencei-tavat és Gárdonyt választják kikapcsolódásuk helyszínéül.",
+    "Városunk vonzereje gyönyörű fekvésében, forrásaink gyógyhatásában, a környéken termő zamatos, jó boraiban, de legfőképpen az itt élő emberek vendégszeretetében rejlik. Történelmi, kulturális hagyományaink, évtizedekre visszatekintő rendezvényeink és természeti kincseink minden évszakban várják az itt élőket és a hozzánk látogatókat.",
+    "A kiváló közlekedési kapcsolat Budapesttel és Székesfehérvárral a vállalkozások és az új otthont keresők számára is vonzóvá teszi településünket, amire nagyon büszkék vagyunk.",
+    "Honlapunkon keresztül az érdeklődők megismerhetik városunk múltját, jelenét, nyomon követhetik az aktuális eseményeket. Az itt élők részére pedig szeretnénk megkönnyíteni a hivatalos ügyek intézését; oldalunkon megtalálhatják az összes fontos tudnivalót, letölthetnek nyomtatványokat, lehetőség van elektronikus ügyintézésre is.",
+    "A személyes találkozás reményében kívánok virtuális barangolásához hasznos és kellemes időtöltést!"
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero with Lake Background */}
@@ -47,6 +57,50 @@ export default function BemutatkozasPage() {
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <ArrowRight className="w-8 h-8 text-white rotate-90" />
+        </div>
+      </section>
+
+      {/* Polgármester köszöntője – hosszú verzió */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center mb-10">
+          </div>
+
+          <article className="mx-auto max-w-4xl">
+            <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8 md:gap-10 lg:gap-12">
+              <div className="w-full md:w-auto flex flex-col items-center md:items-start gap-3">
+                <div className="w-[262px] h-[406px] rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src="/media/EotvosPalArpad.png"
+                    alt="Eötvös Pál Árpád portréja"
+                    width={262}
+                    height={406}
+                    className="w-full h-full object-cover"
+                    sizes="(max-width: 768px) 100vw, 262px"
+                    priority
+                  />
+                </div>
+                <div className="text-center md:text-left space-y-1">
+                  <p className="font-semibold text-[#111827]">Eötvös Pál Árpád</p>
+                  <p className="text-sm text-[#4B5563]">polgármester</p>
+                </div>
+              </div>
+
+              <div className="flex-1 font-[Inter] text-[16px] leading-6 text-[#1F2937] space-y-4">
+                <h3 className="text-sm sm:text-base font-semibold text-[#007A6C]">Polgármester köszöntője</h3>
+                <h4 className="text-2xl sm:text-3xl font-semibold text-[#1F2937]">Kedves Látogató!</h4>
+
+                {mayorMessage.map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
+
+                <div className="pt-4 space-y-1">
+                  <p className="font-semibold text-[#111827]">Eötvös Pál Árpád</p>
+                  <p className="text-sm text-[#4B5563]">polgármester</p>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
